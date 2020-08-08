@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+{% include 'includes/logout.html' %}
+{% block title %}
+    Book
+{% endblock %}
+
+{% block body %}
+<div id="page-container">
+   <div id="content-wrap">
+              <div class=container>
+                <div class="row" style="margin-top:15px;">
+                   <div class="col-md-8 col-sm-12">
+                      <div class="jumbotron">
+                        <div class="container">
+                          <h1 class="display-4">Book Details</h1>
+                          <p class="lead">ISBN: {{book.isbn}} </p>
+                          <p class="lead">Title: {{book.title}} </p>
+                          <p class="lead">Author: {{book.author}} </p>
+                          <p class="lead">Year: {{book.year}}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex align-items-center">
+                       <div class="list-group">
+                          <img src="../static/goodreads.png" alt="goodreads logo" class="img-fluid mb-2">
+                          <button type="button" class="btn btn-secondary mb-3">
+                           Average Rating: <span class="badge badge-light">{{ goodreads["average_rating"] }}</span>
+                          </button>
+                          <button type="button" class="btn btn-secondary mb-3">
+                           Ratings Count: <span class="badge badge-light">{{ goodreads["work_reviews_count"]}}</span>
+                          </button>
+                       </div>
+                    </div>
+              </div>
+          <div class="container_">
+            <h3>Reviews</h3>
+           {% for item in reviews %}
+           <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title"><span class="badge badge-info">{{item.username}}</span>
+                {% if item.rating == 5 %}
+                <span class="badge badge-success float-right">rated {{item.rating}}</span>
+                {% elif item.rating == 4 or item.rating == 3 %}
+                <span class="badge badge-warning float-right">rated {{item.rating}}</span>
+                {% elif item.rating == 2 or item.rating == 1 %}
+                <span class="badge badge-danger float-right">rated {{item.rating}}</span>
+                {% endif %}
+                </h5>
+                <p class="card-text mt-3 alert alert-info">{{item.comment}}</p>
+            </div>
+           </div>
+            {% endfor %}
+              <hr>
+
+              <div class="form">
+                <form action="{{url_for('book_view', book_id=book_id)}}" method="post">
+                <input type="text" name="comment" class="form-control" style="width:80%" placeholder="Write a review" required autofocus>
+                <select class= "star" name= "rating" style="margin-left:10px; padding-right:4px; padding-left:4px; padding-top:6px; padding-bottom:6px;">
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option selected value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+                </select>
+                <button class="btn btn-info ml-2 mb-2" type="submit" style="padding-right:20px; padding-left:20px;">Post</button>
+               </form>
+             </div>
+         </div>
+   </div>
+   <footer id="footer">
+   <p> Copyright &#169; 2020 &#124; Powered by Cenam Phiphot</p>
+   </footer>
+</div>
+
+<style>
+.container_{
+  padding-bottom:60px;
+}
+</style>
+
+{% endblock %}

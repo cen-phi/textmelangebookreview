@@ -1,0 +1,255 @@
+body {
+  margin: 0;
+}
+/* Style the navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #EAB543;
+  padding: 10px;
+  box-shadow: 0px 4px 0 0 #ffff;
+}
+/* Navbar links */
+.topnav a.active{
+  float: left;
+  color: black;
+  text-align: center;
+  padding-left:45px;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 800;
+  font-family:  "Papyrus", fantasy;
+}
+
+/* Style the input field inside the navbar */
+.topnav input[type=text],.topnav input[type=password] {
+  padding: 2px;
+  margin-right:5px;
+  margin-top: 3px;
+  font-size: 14px;
+  border-style: ridge;
+  border-radius: 5px;
+  width: 120px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+/* Style the button inside the input container */
+.topnav .login-container button {
+  padding: 4px 15px;
+  margin-top: 3px;
+  margin-right: 16px;
+  background: #cc8e35;
+  font-size: 14px;
+  color: #ffff;
+  border: 1px #9999ff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.topnav .login-container{
+  float: right;
+}
+
+/* Style for hover */
+.topnav .login-container button:hover {
+  background: #ffa20c;
+}
+/* logout nav */
+.nav {
+  overflow: hidden;
+  background-color: #EAB543;
+  padding: 10px;
+  display: flex;
+  height:70px;
+
+}
+.nav a.active {
+    float: left;
+    display: inline-flex;
+    color: black;
+    text-align: center;
+    padding-left:45px;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 800;
+    font-family:  "Papyrus", fantasy;
+}
+.nav a.active:hover {
+color: #576675;
+}
+.nav .search-container {
+position: relative;
+left:280px;
+}
+
+.nav .search-container input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  height: 30px;
+  border-radius:30px;
+}
+.nav .search-container button {
+  float: right;
+  position: relative;
+  outline: none;
+  bottom:32px;
+  padding: 2px 6px;
+  border-radius:50%;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+.navbar  {
+  float:right;
+  display: block;
+  position:relative;
+  top:5px;
+  left:275px;
+}
+.navbar a{
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 25px;
+  color: black;
+}
+.navbar a:hover {
+  color: #576675;
+}
+
+/*Style for home page*/
+* {
+  box-sizing: border-box;
+}
+.bg-img {
+  /* The image used */
+  background-image: url("Book.jpg");
+  min-height: 500px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+.overlay {
+  background: #000;
+  opacity:0.5;
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+
+}
+.text {
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  top: 125px;
+  left: 70px;
+  right: auto;
+  border-radius: 12px 0 12px 0;
+  background: linear-gradient(rgba(248, 239, 186,0.7), rgba(234, 181, 67,0.7));
+  padding:25px;
+  z-index: 2;
+}
+
+.container_re {
+  position: absolute;
+  right: 0;
+  border-radius: 7px;
+  margin-top: 40px;
+  margin-right: 70px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+  z-index: 1;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 8px;
+  margin: 4px 0 4px 0;
+  display: inline-block;
+  border: 1px #D3D3D3;
+  border-radius: 5px;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.registerbtn:hover {
+  opacity: 1;
+}
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+/*search page*/
+.container_box {
+  padding-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  opacity: 0.9;
+}
+
+.container_search {
+  padding-top: 10px;
+  padding-bottom: 40px;
+  margin-top: 50px;
+  background-color: white;
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.bg-img-search {
+  /* The image used */
+  background-image: url("searchh.jpg");
+  min-height: 500px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container_search input:placeholder-shown{
+background-color: white;
+width: 40%;
+}
+.parent inline-flex-parent{
+  display:inline-block;
+}
+#page-container {
+  position: relative;
+  min-height: 100%;
+}
+
+#content-wrap {
+  padding-bottom: 60px;    /* Footer height */
+}
+#footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   height: 60px;
+   width: 100%;
+   background-color:#ffdb58;
+   color: black;
+   text-align: center;
+   padding: 25px;
+}

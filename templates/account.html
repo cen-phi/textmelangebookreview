@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% include 'includes/logout.html' %}
+{% block title %}
+    Account
+{% endblock %}
+
+{% block body %}
+<div id="page-container">
+   <div id="content-wrap">
+              <div class=container>
+                <div class="row" style="margin-top:15px;">
+                   <div class="col-md-5 col-sm-12 left">
+                      {%if userInfo %}
+                      <div class="card" style="background-color:  #f2f9ff;">
+                        <div class="container">
+                          <h3>Account Information</h3>
+                          <p class="lead">Username: {{userInfo['username']}} </p>
+                          <p class="lead">Password:{{userInfo['password']}} </p>
+                          <p class="lead">Created on: {{userInfo['date'].strftime("%d %B, %Y") }} </p>
+                          <p class="lead">Books Reviewed: {{reviewCount}}</p>
+                        </div>
+                      </div>
+                    {%endif%}
+                    </div>
+                  <div class="col-md-7">
+
+                    <table class="table table table-bordered" >
+                    <tr style="background-color:  #f2f9ff;">
+                    <th colspan="4" style="color: #000; font-weight: bold; text-align: center;">
+                             Reviewed Books
+                              <tr>
+                              <th>Book_id</th>
+                              <th>Rating</th>
+                              <th>Comment</th>
+                              <th>Date</th>
+                              </tr>
+                           {% if reviewedbooks %} {% for i in reviewedbooks %}
+                           <tr>
+                             <td><a href="{{ url_for('book_view', book_id = i[2]) }}">{{ i[2]}}</a></td>
+                             <td>{{ i[3]}}</td>
+                             <td>{{ i[4]}}</td>
+                             <td>{{ i[5].strftime("%d %B, %Y") }}</td>
+                           </tr>
+                           {% endfor %} {% endif %}
+
+                    </table>
+        </div>
+   </div>
+   <footer id="footer">
+   <p> Copyright &#169; 2020 &#124; Powered by Cenam Phiphot</p>
+   </footer>
+</div>
+
+<style>
+.container{
+padding-bottom:60px;
+}
+</style>
+
+{% endblock %}

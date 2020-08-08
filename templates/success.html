@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Success
+{% endblock %}
+
+{% block body %}
+<div class="bg-img">
+  <div class="containerb">
+	<div class="row" style="padding:20px;" >
+      <div class="col-sm-6 col-sm-offset-3 center">
+	    <div class="card" style="background-color:  #f2f9ff;">
+         <div class="container text-center">
+        <br><br> <h2 style="color:#0fad00">Great!</h2>
+
+        <h3>Your account has been created successfully.</h3>
+        <p style="font-size:20px;color:#5C5C5C;">Now you can comment and rate your favourite book. It's a good way to keep track of you the books you've read.</p>
+        <a href="{{ url_for('index') }}" class="btn btn-success">Sign in</a>
+    <br><br>
+        </div></div></div></div>
+
+	</div>
+</div>
+
+<style>
+.containerb{
+position: relative;
+left:250px;
+</style>
+
+
+{% endblock %}

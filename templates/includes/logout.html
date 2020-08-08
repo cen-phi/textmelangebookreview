@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+ <div class="nav">
+   <a class="active" href="{{ url_for('search') }}">Text Melange</a>
+  <div class="search-container">
+     <form action="{{ url_for('search') }}" method="POST">
+     <input type="text" placeholder="Search.." name="search" required="required">
+     <button type="submit"><i class="fa fa-search"></i></button>
+     </form>
+ </div>
+ <div class="navbar">
+ <a href="{{ url_for('account') }}"> Welcome, {{session.username}} <i class="fa fa-fw fa-user"></i></a>
+ <a href="{{ url_for('sign_out') }}" method="GET"> Sign out <i class="fa fa-sign-out"></i></a>
+</div>
+</div>
+
+
+
+{% endblock %}

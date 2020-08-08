@@ -1,0 +1,35 @@
+{% extends "layout.html" %} {% block body %}
+
+
+{% include 'includes/logout.html' %}
+<div id="page-container">
+  <div id="content-wrap">
+    <div class="container_">
+     <div class="bg-img-search">
+         <div class="container_box">{% include 'includes/_message.html' %}
+            <div class="container_search">
+                 <h4 class="text-center mb-4">Let's search!</h4>
+                 <form action="{{ url_for('search') }}" class="form-inline" method="POST">
+                    <input class="search form-control ml-auto mr-3 px-2"
+                     type="text"
+                     name="search"
+                     placeholder="Enter title, author or ISBN"
+                     aria-label="Search"
+                     required="required">
+                    <button class="btn btn-outline-success mr-auto" type="submit">Search</button>
+                 </form>
+            </div>
+         </div>
+      </div>
+    </div>
+  </div>
+    <footer id="footer">
+    <p> Copyright &#169; 2020 &#124; Powered by Cenam Phiphot</p>
+    </footer>
+</div>
+<style>
+.container_{
+  padding-bottom:60px;
+}
+</style>
+{% endblock %}
